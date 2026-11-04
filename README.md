@@ -40,6 +40,7 @@ If we add the two additional gestures after the word they (sort of) '_rhyme_' wi
 5. Scissors
 
 In the five-gesture version each gesture defeats **the two gestures before it** in that cyclic order (and loses to the two after it).
+
 Hence, the following rules can be derived:
 - Scissors cut paper
 - Paper covers rock
@@ -64,7 +65,9 @@ Hence, the following rules can be derived:
   * `determineWin(otherPlayerChoice)`: compares the choice with the other player's choice
     * Should return an `int`:
       * `0`: choice is equal to otherPlayerChoice
-      * `1`: choice wins against otherPlayerChoice      * `-1`: choice loses to otherPlayerChoice  * `competeExplanation(otherPlayerChoice)`: should return a `String` of the game round's explanation (e.g., "Lizard poisons Spock")
+      * `1`: choice wins against otherPlayerChoice
+      * `-1`: choice loses to otherPlayerChoice
+  * `competeExplanation(otherPlayerChoice)`: should return a `String` of the game round's explanation (e.g., "Lizard poisons Spock")
 * **Input Validation & Error Handling**: Make sure to add error and input validation checks!
 
 ### Polymorphism in this assignment (see L19)
@@ -88,7 +91,8 @@ Hence, `compete()` works for every gesture without knowing which one it is (the 
 - Hints:
   - Use the `instanceof` operator to check which gesture the other player chose, e.g., `if (otherPlayerChoice instanceof Lizard) { ... }`
   - Compare types, not names: `getName()` includes an emoji (e.g., `"Rock 👊"`), so comparing it to `"Rock"` does not work
-  - `if-else` statements are rather cumbersome to turn the player's input or a random number into a `Choice`; think about using `switch-case` statements instead (see L19)  - You can access a nice string representation of each choice using `GameChoices`, e.g., `GameChoices.SPOCK`. Do NOT change `GameChoices`!
+  - `if-else` statements are rather cumbersome to turn the player's input or a random number into a `Choice`; think about using `switch-case` statements instead (see L19)
+  - You can access a nice string representation of each choice using `GameChoices`, e.g., `GameChoices.SPOCK`. Do NOT change `GameChoices`!
 
 *Note:* The emoji representation may not work on all machines, depending on your OS' encoding.
 
